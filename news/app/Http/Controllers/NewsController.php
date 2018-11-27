@@ -30,6 +30,7 @@ class NewsController extends Controller
         $new->description=$request->description;
         $new->save();
 
+
         die();
     }
 }
