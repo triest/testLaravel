@@ -11,7 +11,17 @@ class NewsController extends Controller
 
     public function newsList()
     {
-        return view('news/list', ['name' => 'James']);
+        $news = News::select([
+            'id',
+            'title',
+            'description',
+            'image_name',
+            'created_at',
+            'updated_at'
+        ])
+            ->orderBy('created_at', 'DESC')->simplePaginate(10);
+
+        return view('news/list', ['news' => $news]);
     }
 
     //форма новости
@@ -42,5 +52,6 @@ class NewsController extends Controller
             $new->save();
         }
 
+        return $this->newsList();
     }
 }
