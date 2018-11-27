@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/news', 'NewsController@newsList')->name('mainNews');
-
+Route::get('/detail/{id}', 'NewsController@detail')->name('detail');
 
 Route::group(['middleware' => 'auth'], function () {
 

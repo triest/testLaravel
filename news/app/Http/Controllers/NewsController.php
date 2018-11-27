@@ -54,4 +54,16 @@ class NewsController extends Controller
 
         return $this->newsList();
     }
+
+    public function detail($id){
+        $new=News::select([ 'id',
+            'title',
+            'description',
+            'image_name',
+            'created_at',
+            'updated_at'])
+            ->where('id', $id)->first();
+        dump($new);
+        return view('news/detail',['new'=>$new]);
+    }
 }
