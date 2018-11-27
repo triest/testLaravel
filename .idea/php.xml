@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/news/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/news/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/news/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/news/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/news/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/news/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/news/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/news/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/news/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/news/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/news/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/news/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/news/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/news/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/news/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/news/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/news/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/news/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/news/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/news/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/news/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/news/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/news/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/news/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/news/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/news/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/news/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/news/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/news/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/news/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/news/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/news/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/news/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/news/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/news/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/news/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/news/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/news/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/news/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/news/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/news/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/news/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/news/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/news/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/news/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/news/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/news/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/news/vendor/composer" />
+      <path value="$PROJECT_DIR$/news/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/news/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/news/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/news/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/news/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/news/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/news/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/news/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/news/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/news/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/news/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/news/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/news/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/news/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/news/vendor/beyondcode/laravel-dump-server" />
+      <path value="$PROJECT_DIR$/news/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/news/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/news/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/news/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/news/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/news/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/news/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/news/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/news/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/news/vendor/psr/simple-cache" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings load_method="CUSTOM_LOADER" custom_loader_path="$PROJECT_DIR$/news/vendor/autoload.php" />
+    </phpunit_settings>
+  </component>
+</project>
