@@ -20,3 +20,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/news', 'NewsController@newsList')->name('mainNews');
+
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/createnews', 'NewsController@createNews')->name('createNews');
+    Route::post('/storenews', 'NewsController@storeNews')->name('storeNews');
+
+});

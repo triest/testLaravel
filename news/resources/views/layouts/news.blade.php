@@ -61,6 +61,9 @@
                             </form>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('createNews') }}">Create news</a>
+                    </li>
                 @endguest
 </ul>
 <form class="form-inline mt-2 mt-md-0">
