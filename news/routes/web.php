@@ -27,4 +27,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/createnews', 'NewsController@createNews')->name('createNews');
     Route::post('/storenews', 'NewsController@storeNews')->name('storeNews');
 
+    //edit news
+    Route::get('/edit/{id}', 'NewsController@edit')->name('edit');
+    Route::post('/saveedit/{id}', 'NewsController@saveEdit')->name('saveedit');
 });
