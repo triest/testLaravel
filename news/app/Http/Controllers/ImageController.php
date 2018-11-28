@@ -15,15 +15,14 @@ class ImageController extends Controller
      */
     public function index()
     {
-        $images=Image::select( 'id',
+        $images = Image::select('id',
             'title',
             'image_name',
             'created_at',
             'updated_at')
             ->orderBy('created_at', 'DESC')
             ->simplePaginate(30);
-        dump($images);
-        return view('galeray/index',['images'=>$images]);
+        return view('galeray/index', ['images' => $images]);
     }
 
     /**
@@ -39,14 +38,14 @@ class ImageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'file'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-             'title'=>'required'
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'title' => 'required'
         ]);
 
         if (Input::hasFile('file')) {
@@ -55,19 +54,20 @@ class ImageController extends Controller
             $temp_file = base_path() . '/public/images/upload/' . strtolower($image_new_name . '.' . $image_extension);// кладем файл с новыс именем
             $request->file('file')
                 ->move(base_path() . '/public/images/upload/', strtolower($image_new_name . '.' . $image_extension));
-            $image=new Image();
-            $image->image_name=$image_new_name . '.' . $image_extension;
-            $image->title=$request->title;
+            $image = new Image();
+            $image->image_name = $image_new_name . '.' . $image_extension;
+            $image->title = $request->title;
             $image->save();
+            return $this->index();
         }
 
-        $this->index();
+        return $this->index();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Image  $image
+     * @param  \App\Image $image
      * @return \Illuminate\Http\Response
      */
     public function show(Image $image)
@@ -78,7 +78,7 @@ class ImageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Image  $image
+     * @param  \App\Image $image
      * @return \Illuminate\Http\Response
      */
     public function edit(Image $image)
@@ -89,8 +89,8 @@ class ImageController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Image  $image
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Image $image
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Image $image)
@@ -101,7 +101,7 @@ class ImageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Image  $image
+     * @param  \App\Image $image
      * @return \Illuminate\Http\Response
      */
     public function destroy(Image $image)
