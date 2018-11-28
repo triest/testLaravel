@@ -30,4 +30,9 @@ Route::group(['middleware' => 'auth'], function () {
     //edit news
     Route::get('/edit/{id}', 'NewsController@edit')->name('edit');
     Route::post('/saveedit/{id}', 'NewsController@saveEdit')->name('saveedit');
+
+    //galeray
+    Route::get('/galeray','ImageController@index')->name('galeray');
+    Route::post('/galeray','ImageController@store')->name('uploadImage');
 });
+

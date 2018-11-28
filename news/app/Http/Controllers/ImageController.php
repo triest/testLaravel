@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class ImageController extends Controller
 {
@@ -14,7 +15,15 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
+        $images=Image::select( 'id',
+            'title',
+            'image_name',
+            'created_at',
+            'updated_at')
+            ->orderBy('created_at', 'DESC')
+            ->simplePaginate(30);
+        dump($images);
+        return view('galeray/index',['images'=>$images]);
     }
 
     /**
@@ -24,7 +33,7 @@ class ImageController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,7 +44,24 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'file'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+             'title'=>'required'
+        ]);
+
+        if (Input::hasFile('file')) {
+            $image_extension = $request->file('file')->getClientOriginalExtension();
+            $image_new_name = md5(microtime(true));
+            $temp_file = base_path() . '/public/images/upload/' . strtolower($image_new_name . '.' . $image_extension);// кладем файл с новыс именем
+            $request->file('file')
+                ->move(base_path() . '/public/images/upload/', strtolower($image_new_name . '.' . $image_extension));
+            $image=new Image();
+            $image->image_name=$image_new_name . '.' . $image_extension;
+            $image->title=$request->title;
+            $image->save();
+        }
+
+        $this->index();
     }
 
     /**
