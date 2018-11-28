@@ -6,8 +6,10 @@
             Загрузить фотографию:
             <form action="{{route('uploadImage')}}" method="post" enctype="multipart/form-data" novalidate>
                 {{ csrf_field() }}
-                <input type="text" class="form-control" id="title" name="title" required placeholder="Ведите название изображения" required value={{ old('title') }} >
-                <input type="file"  id="file"  name="file" accept="image/x-png,image/gif,image/jpeg" value="{{ old('file')}}" required>
+                <input type="text" class="form-control" id="title" name="title" required
+                       placeholder="Ведите название изображения" required value={{ old('title') }} >
+                <input type="file" id="file" name="file" accept="image/x-png,image/gif,image/jpeg"
+                       value="{{ old('file')}}" required>
                 @if($errors->has('file'))
                     <font color="red"><p>  {{$errors->first('file')}}</p></font>
                 @endif
@@ -21,7 +23,7 @@
                 @foreach($images as $image)
                     <div class="col-sm-6 col-md-4">
                         <a class="lightbox" href="<?php echo asset("/images/upload/$image->image_name")?>">
-                            <img  height="250" src="<?php echo asset("/images/upload/$image->image_name")?>" alt="Park">
+                            <img height="250" src="<?php echo asset("/images/upload/$image->image_name")?>" alt="Park">
                         </a>
                     </div>
                 @endforeach
