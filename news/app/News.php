@@ -30,4 +30,8 @@ class News extends Model
         }
         return $this->getDescription();
     }
+
+    public function tags(){
+        return $this->belongsToMany('App\Tag');
+    }
 }
