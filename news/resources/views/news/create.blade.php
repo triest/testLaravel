@@ -24,6 +24,14 @@
             <font color="red"><p>  {{$errors->first('file')}}</p></font>
         @endif
         <br>
+        @foreach($tags as $tag)
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="{{$tag->id}}" id="{{$tag->id}}">
+                <label class="form-check-label" for="exampleCheck1">{{$tag->title}}</label>
+            </div>
+
+        @endforeach
+        <br>
         <button type="submit" class="btn btn-default">Создать новость</button>
     </form>
     <br>

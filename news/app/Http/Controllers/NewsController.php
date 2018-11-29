@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\News;
+use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Symfony\Component\Filesystem\Exception\IOException;
@@ -29,7 +30,8 @@ class NewsController extends Controller
     //форма новости
     public function createNews(Request $request)
     {
-        return view('news/create');
+        $tags = Tag::all();
+        return view('news/create', ['tags' => $tags]);
     }
 
     public function storeNews(Request $request)
@@ -39,7 +41,8 @@ class NewsController extends Controller
             'description' => 'required|min:10',
             'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-
+        dump($request);
+        die();
         $new = new News();
         $new->title = $request->title;
         $new->description = $request->description;
@@ -74,6 +77,7 @@ class NewsController extends Controller
         if ($new == null) {
             return abort(404);
         }
+
 
         return view('news/detail', ['new' => $new]);
     }
