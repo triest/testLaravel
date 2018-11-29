@@ -3,10 +3,7 @@
 
 @section('content')
     <div class="container">
-        <!-- Example row of columns -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('createNews') }}">Create news</a>
-        </li>
+               <a class="btn btn-primary" href="{{ route('createNews') }}">Create news</a>
         <div class="row text-center py-5">
                     @foreach($news as $new)
                    <div class="col-md-4">

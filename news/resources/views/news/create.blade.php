@@ -12,14 +12,13 @@
             @endif
         </div>
         <div class="form-group">
-            <label for="exampleInputFile">Текст новости:</label><br>
-            <textarea  name="description" id="description"  required> {{old('description')}}</textarea>
+            <label for="description">Текст новости:</label><br>
+            <textarea class="col-md-12" name="description" id="description" rows="10" cols="50"  style="height:100%;" required> {{old('description')}}</textarea>
             @if($errors->has('description'))
                 <font color="red"><p>  {{$errors->first('description')}}</p></font>
             @endif
         </div>
         <label>Иллюстрация новости</label>
-
         <input type="file"  id="file" accept="image/*"  name="file" value="{{ old('file')}}" required>
         @if($errors->has('file'))
             <font color="red"><p>  {{$errors->first('file')}}</p></font>
@@ -27,5 +26,6 @@
         <br>
         <button type="submit" class="btn btn-default">Создать новость</button>
     </form>
-
+    <br>
+    <a class="btn btn-secondary" href="{{ route('mainNews') }}">Назад</a>
 @endsection

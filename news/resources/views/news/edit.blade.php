@@ -14,7 +14,7 @@
         <input type="hidden" id="id" name="id" value="{{$new->id}}">
         <div class="form-group">
             <label for="exampleInputFile">Текст новости:</label><br>
-            <textarea  name="description" id="description"  required> {{$new->description}}</textarea>
+            <textarea class="col-md-12"   name="description" id="description" rows="10" cols="50"  required> {{$new->description}}</textarea>
             @if($errors->has('description'))
                 <font color="red"><p>  {{$errors->first('description')}}</p></font>
             @endif
@@ -29,5 +29,7 @@
         <br>
         <button type="submit" class="btn btn-default">Сохнанить изменения</button>
     </form>
+    <br>
+    <a class="btn btn-secondary" href="{{ route('mainNews') }}">Назад</a>
 
 @endsection

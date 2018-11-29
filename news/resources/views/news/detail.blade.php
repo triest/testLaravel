@@ -15,7 +15,7 @@
                 <img height="250" src="<?php echo asset("/images/upload/$new->image_name")?>"></img></a><br>
                     {{$new->description}}
                 <br>
-                <a class="button blue" href="{{route('mainNews')}}" role="link">К ленте новостей</a>
+                <a class="btn btn-secondary" href="{{ route('mainNews') }}">Назад</a>
             </div>
         </div>
     </div>
