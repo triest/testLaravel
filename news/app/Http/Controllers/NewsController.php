@@ -76,14 +76,15 @@ class NewsController extends Controller
             'image_name',
             'created_at',
             'updated_at'
-        ])
-            ->where('id', $id)->first();
+        ])->where('id', $id)->first();
+        $tags = $new->tags()->get();
+
         if ($new == null) {
             return abort(404);
         }
 
 
-        return view('news/detail', ['new' => $new]);
+        return view('news/detail', ['new' => $new, 'tags' => $tags]);
     }
 
     public function edit($id)

@@ -16,6 +16,12 @@
                 <img height="250" src="<?php echo asset("/images/upload/$new->image_name")?>"></img></a><br>
                     {{$new->description}}
                 <br>
+
+                Теги:
+                @foreach($tags as $tag)
+                    {{$tag->title}}
+                @endforeach
+                <br>
                 <a class="btn btn-secondary" href="{{ route('mainNews') }}">Назад</a>
             </div>
         </div>

@@ -17,7 +17,7 @@ Auth::routes();
 Route::get('/', 'IndexController@index')->name('main');
 
 Route::get('/news', 'NewsController@newsList')->name('mainNews');
-Route::get('/detail/{id}', 'NewsController@detail')->name('detail');
+Route::get('news/detail/{id}', 'NewsController@detail')->name('detail');
 
 Route::get('/galeray', 'ImageController@index')->name('galeray');
 
@@ -35,7 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('/galeray', 'ImageController@store')->name('uploadImage');
     Route::get('/galeray/{id}', 'ImageController@show')->name('imagedetail');
-    Route::get('/galeray/delete/{id}','ImageController@delete')->name('imagedelete');
+    Route::get('/galeray/delete/{id}', 'ImageController@delete')->name('imagedelete');
 
     //tegs
     Route::get('/tags', 'TagController@index')->name('mainTag');
