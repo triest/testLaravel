@@ -15,7 +15,8 @@ class Tag extends Model
         'updated_at'
     ];
 
-    public function news(){
+    public function news()
+    {
         return $this->belongsToMany('App\News');
     }
 }

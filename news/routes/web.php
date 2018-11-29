@@ -12,7 +12,6 @@
 */
 
 
-
 Auth::routes();
 
 Route::get('/', 'IndexController@index')->name('main');
@@ -20,7 +19,7 @@ Route::get('/', 'IndexController@index')->name('main');
 Route::get('/news', 'NewsController@newsList')->name('mainNews');
 Route::get('/detail/{id}', 'NewsController@detail')->name('detail');
 
-Route::get('/galeray','ImageController@index')->name('galeray');
+Route::get('/galeray', 'ImageController@index')->name('galeray');
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -33,7 +32,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     //galeray
 
-    Route::post('/galeray','ImageController@store')->name('uploadImage');
-    Route::get('/galeray/{id}','ImageController@show')->name('imagedetail');
+    Route::post('/galeray', 'ImageController@store')->name('uploadImage');
+    Route::get('/galeray/{id}', 'ImageController@show')->name('imagedetail');
+    Route::get('/galeray/delete/{id}','ImageController@delete')->name('imagedelete');
 });
 

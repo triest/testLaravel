@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use File;
 
 class ImageController extends Controller
 {
@@ -119,5 +120,20 @@ class ImageController extends Controller
     public function destroy(Image $image)
     {
         //
+    }
+
+    public function delete($id)
+    {
+        $image = Image::find($id);
+
+        $path = base_path() . '/public/images/upload/' . $image->image_name;
+        dump($path);
+        try {
+            File::Delete($path);
+        } catch (\Exception $e) {
+        }
+        $image->delete();
+        return $this->index();
+
     }
 }

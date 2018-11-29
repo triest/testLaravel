@@ -9,13 +9,19 @@
                        <h7>{{$image->created_at}}</h7>
                 @guest
                 @else
-
+                    <br>
+                    <a class="btn btn-danger"  onclick="return confirm('Вы уверены?')" href="{{route('imagedelete',['id'=>$image->id])}}" role="link">Удалить</a>
+                    <br>
                 @endguest<br>
                 <img height="250" src="<?php echo asset("/images/upload/$image->image_name")?>"></img></a><br>
                 <br>
-
-                <a class="button blue" href="{{route('mainNews')}}" role="link">К ленте новостей</a>
+                <a class="btn btn-secondary"  href="{{route('galeray')}}" role="link">К галерее</a>
             </div>
         </div>
-    </div>
+        <script>
+            $(".delete").on("submit", function(){
+                return confirm("Are you sure?");
+            });
+        </script>
+
 @endsection

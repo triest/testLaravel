@@ -18,20 +18,22 @@ class News extends Model
         'updated_at'
     ];
 
-    public function getDescription(){
+    public function getDescription()
+    {
         return $this->description;
     }
 
 
-
-    public function getShortDescription(){
-        if(strlen($this->getDescription())>50){
-            return substr($this->getDescription(),0,50);
+    public function getShortDescription()
+    {
+        if (strlen($this->getDescription()) > 50) {
+            return substr($this->getDescription(), 0, 50);
         }
         return $this->getDescription();
     }
 
-    public function tags(){
+    public function tags()
+    {
         return $this->belongsToMany('App\Tag');
     }
 }

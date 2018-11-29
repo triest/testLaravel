@@ -8,6 +8,7 @@
                     @foreach($news as $new)
                    <div class="col-md-4">
                             <H2>{{$new->title}}</H2>
+                              <h7>{{$new->created_at}}</h7> <br>
                              {{$new->getShortDescription()}}
                        <br>
                           <b> <a href="{{route('detail',['id'=>$new->id])}}">подробно...</a></b>
