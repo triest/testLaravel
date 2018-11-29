@@ -15,7 +15,7 @@ class NewsTagTable extends Migration
     {
         Schema::create('news_tags', function (Blueprint $table) {
              $table->increments('id');
-             $table->integer('new_id')->unsigned()->index();
+            $table->integer('news_id')->unsigned()->index();
              $table->integer('tag_id')->unsigned()->index();
     });
 

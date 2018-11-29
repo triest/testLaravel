@@ -41,12 +41,16 @@ class NewsController extends Controller
             'description' => 'required|min:10',
             'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        dump($request);
-        die();
         $new = new News();
         $new->title = $request->title;
         $new->description = $request->description;
         $new->save();
+        $tags_request = $request->input('tags');
+        $tags = Tag::find($tags_request);
+
+        foreach ($tags as $tag) {
+            $new->tags()->attach($tag);
+        }
 
         if (Input::hasFile('file')) {
             $image_extension = $request->file('file')->getClientOriginalExtension();
@@ -141,11 +145,12 @@ class NewsController extends Controller
             $new->save();
 
         }
-        return redirect()->route('detail',['id'=>$id]);
+        return redirect()->route('detail', ['id' => $id]);
     }
 
-    public function delete($id){
-        $new=News::find($id);
+    public function delete($id)
+    {
+        $new = News::find($id);
         $new->delete();
         return $this->newsList();
     }
