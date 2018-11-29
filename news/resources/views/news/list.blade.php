@@ -3,7 +3,11 @@
 
 @section('content')
     <div class="container">
-               <a class="btn btn-primary" href="{{ route('createNews') }}">Create news</a>
+        @guest
+        @else
+            <a class="btn btn-primary" href="{{ route('createNews') }}">Создать новость</a>
+            <a class="btn btn-secondary" href="{{ route('mainTag') }}">Создать тег</a>
+        @endguest
         <div class="row text-center py-5">
                     @foreach($news as $new)
                    <div class="col-md-4">

@@ -36,5 +36,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/galeray', 'ImageController@store')->name('uploadImage');
     Route::get('/galeray/{id}', 'ImageController@show')->name('imagedetail');
     Route::get('/galeray/delete/{id}','ImageController@delete')->name('imagedelete');
+
+    //tegs
+    Route::get('/tags', 'TagController@index')->name('mainTag');
+    Route::post('/storetag', 'TagController@store')->name('storeTag');
+
 });
 
