@@ -155,4 +155,11 @@ class NewsController extends Controller
         $new->delete();
         return $this->newsList();
     }
+
+    public function seachByTag($id)
+    {
+        $tag = Tag::find($id);
+        $news = $tag->news()->orderBy('created_at', 'DESC')->simplePaginate(10);
+        return view('news/list', ['news' => $news]);
+    }
 }

@@ -40,6 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
     //tegs
     Route::get('/tags', 'TagController@index')->name('mainTag');
     Route::post('/storetag', 'TagController@store')->name('storeTag');
+    Route::get('/tag/{name}', 'NewsController@seachByTag')->name('seachByTag');
 
 });
 

@@ -19,7 +19,7 @@
 
                 Теги:
                 @foreach($tags as $tag)
-                    {{$tag->title}}
+                    <a href="{{route('seachByTag',['id'=>$tag->id])}}"> {{$tag->title}} </a>
                 @endforeach
                 <br>
                 <a class="btn btn-secondary" href="{{ route('mainNews') }}">Назад</a>
