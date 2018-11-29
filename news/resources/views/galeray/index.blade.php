@@ -1,4 +1,4 @@
-@extends('layouts.news', ['title' => 'Галерея'])
+@extends('layouts.main', ['title' => 'Галерея'])
 
 @section('content')
     @guest
@@ -31,8 +31,10 @@
                         {{$image->title}} <br>
                         <a class="lightbox" href="<?php echo asset("/images/upload/$image->image_name")?>">
                             <img height="250" src="<?php echo asset("/images/upload/$image->image_name")?>" alt="Park">
-                        </a>
+                        </a><br>
+                        <b> <a href="{{route('imagedetail',['id'=>$image->id])}}">подробно...</a></b>
                     </div>
+
                 @endforeach
             </div>
         </div>

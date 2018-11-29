@@ -1,4 +1,4 @@
-@extends('layouts.news', ['title' => 'Новости'])
+@extends('layouts.main', ['title' => 'Новости'])
 
 
 @section('content')
@@ -9,7 +9,8 @@
                     @foreach($news as $new)
                    <div class="col-md-4">
                             <H2>{{$new->title}}</H2>
-                             {{$new->description}}
+                             {{$new->getShortDescription()}}
+
                        <br>
                           <b> <a href="{{route('detail',['id'=>$new->id])}}">подробно...</a></b>
                     </div>

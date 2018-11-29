@@ -70,9 +70,21 @@ class ImageController extends Controller
      * @param  \App\Image $image
      * @return \Illuminate\Http\Response
      */
-    public function show(Image $image)
+    public function show($id)
     {
-        //
+        if ($id == null) {
+            return abort(404);
+        }
+        $image = Image::select([
+            'id',
+            'title',
+            'image_name',
+            'created_at',
+            'updated_at'
+        ])
+            ->where('id', $id)->first();
+
+        return view('galeray/detail', ['image' => $image]);
     }
 
     /**

@@ -11,16 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'IndexController@index')->name('main');
 
 Route::get('/news', 'NewsController@newsList')->name('mainNews');
 Route::get('/detail/{id}', 'NewsController@detail')->name('detail');
+
+Route::get('/galeray','ImageController@index')->name('galeray');
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -32,7 +32,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/saveedit/{id}', 'NewsController@saveEdit')->name('saveedit');
 
     //galeray
-    Route::get('/galeray','ImageController@index')->name('galeray');
+
     Route::post('/galeray','ImageController@store')->name('uploadImage');
+    Route::get('/galeray/{id}','ImageController@show')->name('imagedetail');
 });
 

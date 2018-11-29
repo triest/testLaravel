@@ -135,8 +135,8 @@ class NewsController extends Controller
             ->move(base_path() . '/public/images/upload/', strtolower($image_new_name . '.' . $image_extension));
             $new->image_name = $image_new_name . '.' . $image_extension;
             $new->save();
-            $this->detail($id);
+
         }
-        $this->detail($id);
+        return redirect()->route('detail',['id'=>$id]);
     }
 }
