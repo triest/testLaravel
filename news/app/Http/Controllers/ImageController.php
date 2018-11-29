@@ -125,9 +125,7 @@ class ImageController extends Controller
     public function delete($id)
     {
         $image = Image::find($id);
-
         $path = base_path() . '/public/images/upload/' . $image->image_name;
-        dump($path);
         try {
             File::Delete($path);
         } catch (\Exception $e) {

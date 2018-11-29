@@ -11,6 +11,7 @@
                 @guest
                 @else
                     <a href="{{route('edit',['id'=>$new->id])}}">Редактировать новость</a>
+                    <a class="btn btn-danger"  onclick="return confirm('Вы уверены?')" href="{{route('newsdelete',['id'=>$new->id])}}" role="link">Удалить</a>
                 @endguest<br>
                 <img height="250" src="<?php echo asset("/images/upload/$new->image_name")?>"></img></a><br>
                     {{$new->description}}

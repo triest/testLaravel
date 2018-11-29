@@ -139,4 +139,10 @@ class NewsController extends Controller
         }
         return redirect()->route('detail',['id'=>$id]);
     }
+
+    public function delete($id){
+        $new=News::find($id);
+        $new->delete();
+        return $this->newsList();
+    }
 }
