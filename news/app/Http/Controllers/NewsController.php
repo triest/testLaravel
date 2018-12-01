@@ -81,13 +81,11 @@ class NewsController extends Controller
             'created_at',
             'updated_at'
         ])->where('id', $id)->first();
-        $tags = $new->tags()->get();
 
         if ($new == null) {
             return abort(404);
         }
-
-        dump($tags);
+        $tags = $new->tags()->get();
         return view('news/detail', ['new' => $new, 'tags' => $tags]);
     }
 
@@ -107,9 +105,6 @@ class NewsController extends Controller
             ->where('id', $id)->first();
 
         $tags = Tag::get()->all();
-        dump($tags);
-
-
         $newsTag = $new->tags()->get();
         foreach ($tags as $tag) {
             if (in_array($tag, $newsTag->toArray())) {
@@ -120,8 +115,6 @@ class NewsController extends Controller
         foreach ($newsTag as $tag) {
             array_push($articleTag, $tag->title);
         }
-        dump($articleTag);
-
         $allTag = [];
         foreach ($tags as $tag) {
             array_push($allTag, $tag->title);

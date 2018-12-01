@@ -1,4 +1,4 @@
-@extends('layouts.main', ['title' => $new->title])
+@extends('layouts.news', ['title' => $new->title])
 
 
 @section('content')
