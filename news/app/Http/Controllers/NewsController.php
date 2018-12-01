@@ -120,7 +120,6 @@ class NewsController extends Controller
             array_push($allTag, $tag->title);
         }
 
-        dump($allTag);
 
 
         if ($new == null) {
@@ -208,5 +207,21 @@ class NewsController extends Controller
         $tag = Tag::find($id);
         $news = $tag->news()->orderBy('created_at', 'DESC')->simplePaginate(10);
         return view('news/list', ['news' => $news]);
+    }
+
+    public static function getTags(){
+             $news= $new = News::select([
+                 'id',
+                 'title',
+                 'description',
+                 'image_name',
+                 'created_at',
+                 'updated_at'
+             ])->get();
+           //  dump($news);
+            $tags=Tag::all();
+
+           // $tags=Tag::has('news','=',1)->get();
+            return $tags;
     }
 }
