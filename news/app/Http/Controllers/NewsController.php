@@ -41,16 +41,20 @@ class NewsController extends Controller
             'description' => 'required|min:10',
             'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+        dump($request);
         $new = new News();
         $new->title = $request->title;
         $new->description = $request->description;
         $new->save();
         $tags_request = $request->input('tags');
+        dump($tags_request);
         $tags = Tag::find($tags_request);
+
 
         foreach ($tags as $tag) {
             $new->tags()->attach($tag);
         }
+
 
         if (Input::hasFile('file')) {
             $image_extension = $request->file('file')->getClientOriginalExtension();
@@ -83,7 +87,7 @@ class NewsController extends Controller
             return abort(404);
         }
 
-
+        dump($tags);
         return view('news/detail', ['new' => $new, 'tags' => $tags]);
     }
 
@@ -104,6 +108,8 @@ class NewsController extends Controller
 
         $tags = Tag::get()->all();
         dump($tags);
+
+
         $newsTag = $new->tags()->get();
         foreach ($tags as $tag) {
             if (in_array($tag, $newsTag->toArray())) {
@@ -179,8 +185,21 @@ class NewsController extends Controller
             ->move(base_path() . '/public/images/upload/', strtolower($image_new_name . '.' . $image_extension));
             $new->image_name = $image_new_name . '.' . $image_extension;
             $new->save();
-
         }
+
+        $new->tags()->detach();
+        $tags_request = $request->input('tags');
+
+        $tags = Tag::select('id',
+            'title',
+            'created_at',
+            'updated_at')->whereIn('title', $tags_request)->get();
+
+
+        foreach ($tags as $tag) {
+            $new->tags()->attach($tag);
+        }
+
         return redirect()->route('detail', ['id' => $id]);
     }
 

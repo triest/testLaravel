@@ -29,7 +29,7 @@
         Теги: <br>
         @foreach($tags as $tag)
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" value="{{$tag}}"
+                <input type="checkbox" class="form-check-input"  name="tags[]" value="{{$tag}}"
                        @if(in_array($tag,$newsTag)) checked="1" @endif >
                 <label class="form-check-label" for="exampleCheck1">{{$tag}}</label>
             </div>
