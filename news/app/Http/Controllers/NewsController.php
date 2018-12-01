@@ -103,16 +103,31 @@ class NewsController extends Controller
             ->where('id', $id)->first();
 
         $tags = Tag::get()->all();
+        dump($tags);
         $newsTag = $new->tags()->get();
         foreach ($tags as $tag) {
             if (in_array($tag, $newsTag->toArray())) {
                 echo $tag->title;
             }
         }
+        $articleTag = [];
+        foreach ($newsTag as $tag) {
+            array_push($articleTag, $tag->title);
+        }
+        dump($articleTag);
+
+        $allTag = [];
+        foreach ($tags as $tag) {
+            array_push($allTag, $tag->title);
+        }
+
+        dump($allTag);
+
+
         if ($new == null) {
             return abort(404);
         }
-        return view('news/edit', ['new' => $new, 'tags' => $tags,/*'newsTag'=>$newsTag*/]);
+        return view('news/edit', ['new' => $new, 'tags' => $allTag, 'newsTag' => $articleTag]);
     }
 
 
