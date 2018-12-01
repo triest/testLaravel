@@ -88,16 +88,16 @@
         <br><br>
         <div class="row">
             <div class="col-xs-12 col-sm-9">
-                    @yield('content')
+                @yield('content')
 
             </div><!--/span-->
 
             <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
                 <div class="list-group">
-                    <?php $tags=\App\Http\Controllers\NewsController::getTags()?>
+                    <?php $tags = \App\Http\Controllers\NewsController::getTags()?>
                     @foreach($tags as $tag)
-                            <a href="{{route('seachByTag',['id'=>$tag->id])}}"> {{$tag->title}} </a>
-                     @endforeach
+                        <a href="{{route('seachByTag',['id'=>$tag->id])}}"> {{$tag->title}} </a>
+                    @endforeach
                 </div>
             </div><!--/span-->
         </div><!--/row-->
@@ -113,7 +113,7 @@
 
     <!-- FOOTER -->
     <footer class="container">
-        <p>&copy; triest  &middot;
+        <p>&copy; triest &middot;
     </footer>
 </main>
 

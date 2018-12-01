@@ -121,7 +121,6 @@ class NewsController extends Controller
         }
 
 
-
         if ($new == null) {
             return abort(404);
         }
@@ -209,19 +208,20 @@ class NewsController extends Controller
         return view('news/list', ['news' => $news]);
     }
 
-    public static function getTags(){
-             $news= $new = News::select([
-                 'id',
-                 'title',
-                 'description',
-                 'image_name',
-                 'created_at',
-                 'updated_at'
-             ])->get();
-           //  dump($news);
-            $tags=Tag::all();
+    public static function getTags()
+    {
+        $news = $new = News::select([
+            'id',
+            'title',
+            'description',
+            'image_name',
+            'created_at',
+            'updated_at'
+        ])->get();
+        //  dump($news);
+        $tags = Tag::all();
 
-           // $tags=Tag::has('news','=',1)->get();
-            return $tags;
+        // $tags=Tag::has('news','=',1)->get();
+        return $tags;
     }
 }

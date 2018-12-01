@@ -83,8 +83,6 @@
 <main role="main">
 
 
-
-
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -108,7 +106,7 @@
     <!-- FOOTER -->
     <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; triest  &middot;
+        <p>&copy; triest &middot;
     </footer>
 </main>
 
