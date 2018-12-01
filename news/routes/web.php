@@ -14,7 +14,8 @@
 
 Auth::routes();
 
-Route::get('/', 'IndexController@index')->name('main');
+Route::get('/', 'mainController@index')->name('main');
+Route::get('/createBlock', 'mainController@create')->name('createBlock');
 
 Route::get('/news', 'NewsController@newsList')->name('mainNews');
 Route::get('news/detail/{id}', 'NewsController@detail')->name('detail');
@@ -41,6 +42,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/tags', 'TagController@index')->name('mainTag');
     Route::post('/storetag', 'TagController@store')->name('storeTag');
     Route::get('/tag/{name}', 'NewsController@seachByTag')->name('seachByTag');
+
+    //main page
+    Route::get('/addblock', 'TagController@index')->name('mainTag');
+
+    //store block
+    Route::post('/storeblock', 'mainController@store')->name('storeBlock');
 
 });
 
