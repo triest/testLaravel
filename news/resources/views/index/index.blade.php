@@ -3,4 +3,5 @@
 @section('content')
     Главная страница сайта
 
+
 @endsection

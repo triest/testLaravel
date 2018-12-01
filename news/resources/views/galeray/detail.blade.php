@@ -1,4 +1,4 @@
-@extends('layouts.main', ['galeray' => $image->title])
+@extends('layouts.main', ['title' => $image->title])
 
 
 @section('content')

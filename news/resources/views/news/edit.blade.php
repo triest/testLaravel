@@ -25,6 +25,14 @@
         @if($errors->has('file'))
             <font color="red"><p>  {{$errors->first('file')}}</p></font>
         @endif
+        <br><br>
+        Теги: <br>
+        @foreach($tags as $tag)
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="tags[]" value="{{$tag->id}}">
+                <label class="form-check-label" for="exampleCheck1">{{$tag->title}}</label>
+            </div>
+        @endforeach
         <br>
         <br>
         <button type="submit" class="btn btn-default">Сохнанить изменения</button>

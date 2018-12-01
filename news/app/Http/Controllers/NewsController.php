@@ -101,10 +101,30 @@ class NewsController extends Controller
             'updated_at'
         ])
             ->where('id', $id)->first();
+
+        $tags = Tag::get()->all();
+        $newsTag = $new->tags()->get();
+        foreach ($tags as $tag) {
+            if (in_array($tag, $newsTag->toArray())) {
+                echo $tag->title;
+            }
+        }
         if ($new == null) {
             return abort(404);
         }
-        return view('news/edit', ['new' => $new]);
+        return view('news/edit', ['new' => $new, 'tags' => $tags,/*'newsTag'=>$newsTag*/]);
+    }
+
+
+    function in_multi_array($needle, $haystack, $strict = false)
+    {
+        foreach ($haystack as $item) {
+            if (($strict ? $item === $needle : $item == $needle) || (is_array($item) && $this->in_multi_array($needle,
+                        $item, $strict))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public function saveEdit(Request $request, $id)
