@@ -1,12 +1,12 @@
 $( document ).ready(function(e) {
     function get_data() {
-        $.ajax({
-            url: "test.html",
-            context: document.body
-        }).done(function() {
-            $( this ).addClass( "done" );
+        console.log("test");
+        $.get("http://news/public/dataformain", function(data){
+            console.log(data)
+
         });
     }
+
     get_data();
 });
 

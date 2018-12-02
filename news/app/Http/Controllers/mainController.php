@@ -3,22 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\mainBlock;
+use Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class mainController extends Controller
 {
 
     public function index(Request $request)
     {
-        $blocks=mainBlock::select([
+        $blocks = mainBlock::select([
             'id',
             'title',
             'description',
             'position',
             'created_at',
-            'updated_at'])->get();
+            'updated_at'
+        ])->get();
 
-        return view('main/main')->with(['blocks'=>$blocks]);
+        return view('main/main')->with(['blocks' => $blocks]);
     }
 
 
@@ -39,5 +42,19 @@ class mainController extends Controller
         $mainBlock->position = $request->optradio;
         $mainBlock->save();
         return redirect()->route('main');
+    }
+
+    public function dataforAjax(Request $request)
+    {
+           // dump($request);
+        $blocks = mainBlock::select([
+            'id',
+            'title',
+            'description',
+            'position',
+            'created_at',
+            'updated_at'
+        ])->get();
+        return Response::json($blocks);
     }
 }

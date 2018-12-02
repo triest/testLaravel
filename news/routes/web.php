@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use Illuminate\Support\Facades\Input;
 
 Auth::routes();
 
@@ -24,6 +24,9 @@ Route::get('/galeray', 'ImageController@index')->name('galeray');
 Route::get('/galeray/{id}', 'ImageController@show')->name('imagedetail');
 
 Route::get('/tag/{name}', 'NewsController@seachByTag')->name('seachByTag');
+
+Route::get('/dataformain', 'mainController@dataforAjax');
+
 
 Route::group(['middleware' => 'auth'], function () {
 
