@@ -25,12 +25,12 @@ class mainController extends Controller
             'title' => 'required|min:2',
             'description' => 'required|min:10',
         ]);
-
-        dump($request);
-        $mainBlock=new mainBlock();
-        $mainBlock->title=$request->title;
-        $mainBlock->description=$request->description;
+        $mainBlock = new mainBlock();
+        $mainBlock->title = $request->title;
+        $mainBlock->description = $request->description;
+        $mainBlock->position = $request->optradio;
         $mainBlock->save();
-        die();
+        return redirect()->route('main');
+
     }
 }

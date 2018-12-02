@@ -13,8 +13,9 @@ class AddDefaultValuePositionMainBlock extends Migration
      */
     public function up()
     {
+        //
         Schema::table('main_block', function (Blueprint $table) {
-            $table->string('position', 50)->change();
+            $table->string('position', 50)->default("central")->change();
         });
     }
 
@@ -26,8 +27,5 @@ class AddDefaultValuePositionMainBlock extends Migration
     public function down()
     {
         //
-        Schema::table('main_block', function (Blueprint $table) {
-            $table->integer('position')->nullable()->change();
-        });
     }
 }

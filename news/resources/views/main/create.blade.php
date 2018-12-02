@@ -34,7 +34,7 @@
         <br>
         <div class="form-check-inline">
             <label class="form-check-label" for="radio2">
-                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="sede">Боковой блок
+                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="side">Боковой блок
             </label>
         </div>
         <br>

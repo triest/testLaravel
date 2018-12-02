@@ -41,7 +41,6 @@ class NewsController extends Controller
             'description' => 'required|min:10',
             'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        dump($request);
         $new = new News();
         $new->title = $request->title;
         $new->description = $request->description;
