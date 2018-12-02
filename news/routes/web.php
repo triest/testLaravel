@@ -21,6 +21,9 @@ Route::get('/news', 'NewsController@newsList')->name('mainNews');
 Route::get('news/detail/{id}', 'NewsController@detail')->name('detail');
 
 Route::get('/galeray', 'ImageController@index')->name('galeray');
+Route::get('/galeray/{id}', 'ImageController@show')->name('imagedetail');
+
+Route::get('/tag/{name}', 'NewsController@seachByTag')->name('seachByTag');
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -35,13 +38,12 @@ Route::group(['middleware' => 'auth'], function () {
     //galeray
 
     Route::post('/galeray', 'ImageController@store')->name('uploadImage');
-    Route::get('/galeray/{id}', 'ImageController@show')->name('imagedetail');
+
     Route::get('/galeray/delete/{id}', 'ImageController@delete')->name('imagedelete');
 
     //tegs
     Route::get('/tags', 'TagController@index')->name('mainTag');
     Route::post('/storetag', 'TagController@store')->name('storeTag');
-    Route::get('/tag/{name}', 'NewsController@seachByTag')->name('seachByTag');
 
     //main page
     Route::get('/addblock', 'TagController@index')->name('mainTag');
