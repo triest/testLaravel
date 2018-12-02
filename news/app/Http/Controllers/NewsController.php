@@ -46,7 +46,6 @@ class NewsController extends Controller
         $new->description = $request->description;
         $new->save();
         $tags_request = $request->input('tags');
-        dump($tags_request);
         $tags = Tag::find($tags_request);
 
 

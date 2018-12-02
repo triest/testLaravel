@@ -20,8 +20,13 @@
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.0/examples/carousel/carousel.css" rel="stylesheet">
+    <script type="text/javascript" src="{{ URL::asset('js/jquery-3.3.1.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>
 </head>
 <body>
+<!--add main script -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
 
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -113,10 +118,7 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+
 <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
 <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
 <!-- Just to make our placeholder images work. Don't actually copy the next line! -->

@@ -10,9 +10,17 @@ class mainController extends Controller
 
     public function index(Request $request)
     {
+        $blocks=mainBlock::select([
+            'id',
+            'title',
+            'description',
+            'position',
+            'created_at',
+            'updated_at'])->get();
 
-        return view('main/main');
+        return view('main/main')->with(['blocks'=>$blocks]);
     }
+
 
     public function create(Request $request)
     {
@@ -31,6 +39,5 @@ class mainController extends Controller
         $mainBlock->position = $request->optradio;
         $mainBlock->save();
         return redirect()->route('main');
-
     }
 }
