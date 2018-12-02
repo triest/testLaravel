@@ -75,6 +75,9 @@
       <path value="$PROJECT_DIR$/news/vendor/phpspec/prophecy" />
       <path value="$PROJECT_DIR$/news/vendor/psr/container" />
       <path value="$PROJECT_DIR$/news/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/news/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/news/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/news/vendor/doctrine/dbal" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

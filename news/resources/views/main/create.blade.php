@@ -14,7 +14,7 @@
         <div class="form-group">
             <label for="description">Текст новости:</label><br>
             <textarea class="col-md-12" name="description" id="description" rows="10" cols="50" style="height:100%;"
-                      required> {{old('description')}}</textarea>
+                      required placeholder="Введите текст"> {{old('description')}}</textarea>
             @if($errors->has('description'))
                 <font color="red"><p>  {{$errors->first('description')}}</p></font>
             @endif
@@ -22,26 +22,25 @@
         <br>
         <div class="form-check-inline">
             <label class="form-check-label" for="radio1">
-                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Option
-                1
+                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="central" checked>Центральный блок
             </label>
         </div>
         <br>
         <div class="form-check-inline">
             <label class="form-check-label" for="radio2">
-                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Option 2
+                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="down">Нижний блок
             </label>
         </div>
         <br>
         <div class="form-check-inline">
             <label class="form-check-label" for="radio2">
-                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option3">Option 2
+                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="sede">Боковой блок
             </label>
         </div>
         <br>
         <div class="form-check-inline">
             <label class="form-check-label" for="radio2">
-                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option4">Option 2
+                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="header">Шапка
             </label>
         </div>
         <br> <br>

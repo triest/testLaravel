@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\mainBlock;
 use Illuminate\Http\Request;
 
 class mainController extends Controller
@@ -20,7 +21,16 @@ class mainController extends Controller
 
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'title' => 'required|min:2',
+            'description' => 'required|min:10',
+        ]);
+
         dump($request);
+        $mainBlock=new mainBlock();
+        $mainBlock->title=$request->title;
+        $mainBlock->description=$request->description;
+        $mainBlock->save();
         die();
     }
 }
