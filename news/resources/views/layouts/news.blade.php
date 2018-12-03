@@ -18,7 +18,7 @@
     <!-- Custom styles for this template -->
     <script type="text/javascript" src="{{ URL::asset('js/jquery-3.3.1.js') }}"></script>
     <link href="https://getbootstrap.com/docs/4.0/examples/carousel/carousel.css" rel="stylesheet">
-
+    <script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>
 </head>
 <body>
 
@@ -120,7 +120,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+
 <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
 <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
 <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
