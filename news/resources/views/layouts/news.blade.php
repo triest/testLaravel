@@ -86,10 +86,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
         <br><br>
         <div class="row">
-            <div class="col-xs-4 col-sm-9">
+
                 @yield('content')
 
-            </div><!--/span-->
+
 
             <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
                 <div class="list-group">

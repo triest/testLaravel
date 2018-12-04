@@ -1,4 +1,4 @@
-@extends('layouts.news', ['title' => 'Новости'])
+@extends('layouts.main', ['title' => 'Новости'])
 
 
 @section('content')
@@ -7,10 +7,15 @@
         @else
             <a class="btn btn-primary" href="{{ route('createBlock') }}">Создать блок</a>
         @endguest
-        <div class="row text-center">
-            <ol>
+                <div class="container">
+                    <div class="row">
+                      <test></test>
+                    </div>
+                </div>
 
-            </ol>
-        </div>
+
     </div>
+
+
+
 @endsection
