@@ -1,11 +1,16 @@
-@extends('layouts.main', ['title' => "ukfdyfz"])
+@extends('layouts.news', ['title' => 'Новости'])
+
 
 @section('content')
-<br><br><br>
+    <div class="container">
+        @guest
+        @else
+            <a class="btn btn-primary" href="{{ route('createBlock') }}">Создать блок</a>
+        @endguest
+        <div class="row text-center">
+            <ol>
 
-    <div class="col-sm">dsds</div>
-    <div class="col-sm">dsds</div>
-    <div class="col-sm">dsds</div>
-    <div class="col-sm">dsds</div>
-
+            </ol>
+        </div>
+    </div>
 @endsection

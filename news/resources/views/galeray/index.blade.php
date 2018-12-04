@@ -1,4 +1,4 @@
-@extends('layouts.main', ['title' => 'Галерея'])
+@extends('layouts.news', ['title' => 'Галерея'])
 
 @section('content')
     @guest

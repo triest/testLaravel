@@ -1,4 +1,4 @@
-@extends('layouts.main', ['title' => 'Создать блок'])
+@extends('layouts.news', ['title' => 'Создать блок'])
 
 @section('content')
     <form action="{{route('storeBlock')}}" method="post" enctype="multipart/form-data" novalidate>

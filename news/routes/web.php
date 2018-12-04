@@ -49,7 +49,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/storetag', 'TagController@store')->name('storeTag');
 
     //main page
-    Route::get('/addblock', 'TagController@index')->name('mainTag');
+    Route::get('/addblock', 'mainController@create')->name('createBlock');
 
     //store block
     Route::post('/storeblock', 'mainController@store')->name('storeBlock');

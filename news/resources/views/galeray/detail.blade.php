@@ -1,4 +1,4 @@
-@extends('layouts.main', ['title' => $image->title])
+@extends('layouts.news', ['title' => $image->title])
 
 
 @section('content')
