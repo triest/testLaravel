@@ -85,27 +85,16 @@
     </nav>
 </header>
 
-<main role="main">
+<div class="container">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <div class="row row-offcanvas row-offcanvas-right">
 
 
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
+            <div class="row">
+                @yield('content')
+            </div><!--/row-->
 
-    <div class="container marketing">
-
-
-        <!-- START THE FEATURETTES -->
-
-        <hr class="featurette-divider">
-
-        @yield('content')
-
-        <hr class="featurette-divider">
-
-        <!-- /END THE FEATURETTES -->
-
-    </div><!-- /.container -->
 
 
     <!-- FOOTER -->
@@ -113,7 +102,7 @@
         <p class="float-right"><a href="#">Back to top</a></p>
         <p>&copy; triest &middot;
     </footer>
-</main>
+
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
