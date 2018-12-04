@@ -54,6 +54,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     //store block
     Route::post('/storeblock', 'mainController@store')->name('storeBlock');
+    Route::get('block/delete/{id}', 'mainController@delete')->name('blockdelete');
+    Route::get('block/edit/{id}', 'mainController@edit')->name('blockedit');
+    Route::post('block/saveedit/', 'mainController@saveedit')->name('saveEditBlock');
+
 
 });
 

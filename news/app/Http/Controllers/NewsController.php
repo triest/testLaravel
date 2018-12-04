@@ -137,7 +137,7 @@ class NewsController extends Controller
         return false;
     }
 
-    public function saveEdit(Request $request, $id)
+    public function saveEdit(Request $request)
     {
         $validatedData = $request->validate([
             'title' => 'required|min:2',
