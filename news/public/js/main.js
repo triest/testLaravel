@@ -2,17 +2,18 @@ $(document).ready(function (e) {
     function get_data() {
         console.log("test");
         $.getJSON("http://news/public/dataformain", function (data) {
-            //  console.log(data);
+            console.log(data);
             var central = new Array();
             $.each(data, function (index, element) {
                 //console.log('title: '+element.title);
                 // console.log('position: '+element.position)
                 if (element.position == 'central') {
                     //  console.log('central')
-
-                    $("test").append('<h4>' + element.title+ '</h4>');
-                    $("test").append('<h1>' + element.date+ '</h1>');
-                    $("test").append('<p>'+element.description+'</p>');
+                    $("test").append('<div class="col-md-4">');
+                    $("test").append('<h4>' + element.title + '</h4>');
+                    $("test").append('<h6>' + element.created_at + '</h6>');
+                    $("test").append('<p>' + element.description + '</p>');
+                    $("test").append('</div>');
                 }
                 if (element.position == 'header') {
                     console.log('header')
@@ -24,9 +25,9 @@ $(document).ready(function (e) {
                     console.log('side')
                 }
             });
-            //   $('<select id="date"/>').append(options.join('')).appendTo('#central');
         });
     }
 
     get_data();
+
 });

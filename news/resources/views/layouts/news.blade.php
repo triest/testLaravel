@@ -86,19 +86,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
         <br><br>
         <div class="row">
-
-                @yield('content')
-
-
-
-            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-                <div class="list-group">
-                    <?php $tags = \App\Http\Controllers\NewsController::getTags()?>
-                    @foreach($tags as $tag)
-                        <a href="{{route('seachByTag',['id'=>$tag->id])}}"> {{$tag->title}} </a>
-                    @endforeach
-                </div>
-            </div><!--/span-->
+            @yield('content')
         </div><!--/row-->
 
         <hr>
